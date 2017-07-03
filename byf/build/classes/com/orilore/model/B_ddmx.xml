@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_ddmxMapper">
+	<resultMap type="B_ddmx" id="b_ddmxResultMap">
+		<id column="id" property="id"/>
+		<result column="cpid" property="cpid"/>
+		<result column="sl" property="sl"/>
+		<result column="price" property="price"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_ddmx">
+		select * from b_ddmx where id=#{id}
+	</select>
+	<select id="select" resultMap="b_ddmxResultMap">
+		select * from b_ddmx
+	</select>
+	<insert id="insert" parameterType="B_ddmx">
+		insert into b_ddmx(cpid,sl,price) values(#{cpid},#{sl},#{price})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_ddmx where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_ddmx">
+		update b_ddmx set cpid=#{cpid},sl=#{sl},price=#{price} where id=#{id}
+	</update>
+</mapper>

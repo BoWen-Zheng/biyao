@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_lxMapper">
+	<resultMap type="B_lx" id="b_lxResultMap">
+		<id column="id" property="id"/>
+		<result column="mc" property="mc"/>
+		<result column="bm" property="bm"/>
+		<result column="pid" property="pid"/>
+		<result column="zt" property="zt"/>
+		<result column="xszt" property="xszt"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_lx">
+		select * from b_lx where id=#{id}
+	</select>
+	<select id="selectbypid" resultType="B_lx">
+		select * from b_lx where pid=0
+	</select>
+	<select id="selectzt" resultType="B_lx" parameterType="int">
+		select * from b_lx where pid=0 and zt=#{zt}
+	</select>
+	<select id="select" resultType="B_lx">
+		select * from b_lx
+	</select>
+	<insert id="insert" parameterType="B_lx">
+		insert into b_lx(mc,bm,pid,xszt) values(#{mc},#{bm},#{pid},#{xszt})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_lx where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_lx">
+		update b_lx set mc=#{mc},bm=#{bm},pid=#{pid},zt=#{zt},xszt=#{xszt} where id=#{id}
+	</update>
+</mapper>

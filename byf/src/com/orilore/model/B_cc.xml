@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_ccMapper">
+	<resultMap type="B_cc" id="b_ccResultMap">
+		<id column="id" property="id"/>
+		<result column="ccmc" property="ccmc"/>
+		<result column="cpid" property="cpid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_cc">
+		select * from b_cc where id=#{id}
+	</select>
+	<select id="select" resultMap="b_ccResultMap">
+		select * from b_cc
+	</select>
+	<select id="selectbycpid" parameterType="int" resultMap="b_ccResultMap">
+		select * from b_cc where cpid=#{cpid}
+	</select>
+	<insert id="insert" parameterType="B_cc">
+		insert into b_cc(ccmc,cpid) values(#{ccmc},#{cpid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_cc where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_cc">
+		update b_cc set ccmc=#{ccmc},cpid=#{cpid} where id=#{id}
+	</update>
+</mapper>

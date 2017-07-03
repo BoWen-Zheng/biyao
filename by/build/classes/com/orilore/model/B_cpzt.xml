@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_cpztMapper">
+	<resultMap type="B_cpzt" id="b_cpztResultMap">
+		<id column="id" property="id"/>
+		<result column="ztmc" property="ztmc"/>
+		<result column="cpid" property="cpid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_cpzt">
+		select * from b_cpzt where id=#{id}
+	</select>
+	<select id="select" resultMap="b_cpztResultMap">
+		select * from b_cpzt
+	</select>
+	<insert id="insert" parameterType="B_cpzt">
+		insert into b_cpzt(ztmc,cpid) values(#{ztmc},#{cpid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_cpzt where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_cpzt">
+		update b_cpzt set ztmc=#{ztmc},cpid=#{cpid} where id=#{id}
+	</update>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_cpqmMapper">
+	<resultMap type="B_cpqm" id="b_cpqmResultMap">
+		<id column="id" property="id"/>
+		<result column="qmjg" property="qmjg"/>
+		<result column="qmzq" property="qmzq"/>
+		<result column="qmms" property="qmms"/>
+		<result column="cpid" property="cpid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_cpqm">
+		select * from b_cpqm where id=#{id}
+	</select>
+	<select id="select" resultMap="b_cpqmResultMap">
+		select * from b_cpqm
+	</select>
+	<select id="selectbycpid"  parameterType="int" resultMap="b_cpqmResultMap">
+		select * from b_cpqm where cpid=#{cpid}
+	</select>
+	<insert id="insert" parameterType="B_cpqm">
+		insert into b_cpqm(qmjg,qmzq,qmms,cpid) values(#{qmjg},#{qmzq},#{qmms},#{cpid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_cpqm where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_cpqm">
+		update b_cpqm set qmjg=#{qmjg},qmzq=#{qmzq},qmms=#{qmms},cpid=#{cpid} where id=#{id}
+	</update>
+</mapper>

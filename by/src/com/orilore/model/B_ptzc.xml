@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_ptzcMapper">
+	<resultMap type="B_ptzc" id="b_ptzcResultMap">
+		<id column="id" property="id"/>
+		<result column="tp" property="tp"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_ptzc">
+		select * from b_ptzc where id=#{id}
+	</select>
+	<select id="select" resultMap="b_ptzcResultMap">
+		select * from b_ptzc
+	</select>
+	<insert id="insert" parameterType="B_ptzc">
+		insert into b_ptzc(tp) values(#{tp})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_ptzc where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_ptzc">
+		update b_ptzc set tp=#{tp} where id=#{id}
+	</update>
+</mapper>

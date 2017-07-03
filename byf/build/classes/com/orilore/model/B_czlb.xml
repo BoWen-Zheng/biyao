@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_czlbMapper">
+	<resultMap type="B_czlb" id="b_czlbResultMap">
+		<id column="id" property="id"/>
+		<result column="czlbmc" property="czlbmc"/>
+		<result column="cpid" property="cpid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_czlb">
+		select * from b_czlb where id=#{id}
+	</select>
+	<select id="select" resultMap="b_czlbResultMap">
+		select * from b_czlb
+	</select>
+	<select id="selectbycpid" parameterType="int" resultMap="b_czlbResultMap">
+		select * from b_czlb where cpid=#{cpid}
+	</select>
+	<insert id="insert" parameterType="B_czlb">
+		insert into b_czlb(czlbmc,cpid) values(#{czlbmc},#{cpid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_czlb where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_czlb">
+		update b_czlb set czlbmc=#{czlbmc},cpid=#{cpid} where id=#{id}
+	</update>
+</mapper>

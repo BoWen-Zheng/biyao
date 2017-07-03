@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_plMapper">
+	<resultMap type="B_pl" id="b_plResultMap">
+		<id column="id" property="id"/>
+		<result column="content" property="content"/>
+		<result column="plrq" property="plrq"/>
+		<result column="fwtd" property="fwtd"/>
+		<result column="spzl" property="spzl"/>
+		<result column="cpid" property="cpid"/>
+		<result column="yhid" property="yhid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_pl">
+		select * from b_pl where id=#{id}
+	</select>
+	<select id="select" resultMap="b_plResultMap">
+		select * from b_pl
+	</select>
+	<insert id="insert" parameterType="B_pl">
+		insert into b_pl(content,plrq,fwtd,spzl,cpid,yhid) values(#{content},#{plrq},#{fwtd},#{spzl},#{cpid},#{yhid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_pl where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_pl">
+		update b_pl set content=#{content},plrq=#{plrq},fwtd=#{fwtd},spzl=#{spzl},cpid=#{cpid},yhid=#{yhid} where id=#{id}
+	</update>
+</mapper>

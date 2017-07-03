@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_plzpMapper">
+	<resultMap type="B_plzp" id="b_plzpResultMap">
+		<id column="id" property="id"/>
+		<result column="plzp" property="plzp"/>
+		<result column="plid" property="plid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_plzp">
+		select * from b_plzp where id=#{id}
+	</select>
+	<select id="select" resultMap="b_plzpResultMap">
+		select * from b_plzp
+	</select>
+	<insert id="insert" parameterType="B_plzp">
+		insert into b_plzp(plzp,plid) values(#{plzp},#{plid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_plzp where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_plzp">
+		update b_plzp set plzp=#{plzp},plid=#{plid} where id=#{id}
+	</update>
+</mapper>

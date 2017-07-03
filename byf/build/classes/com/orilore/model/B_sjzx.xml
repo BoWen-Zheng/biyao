@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_sjzxMapper">
+	<resultMap type="B_sjzx" id="b_sjzxResultMap">
+		<id column="id" property="id"/>
+		<result column="tp" property="tp"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_sjzx">
+		select * from b_sjzx where id=#{id}
+	</select>
+	<select id="select" resultMap="b_sjzxResultMap">
+		select * from b_sjzx
+	</select>
+	<insert id="insert" parameterType="B_sjzx">
+		insert into b_sjzx(tp) values(#{tp})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_sjzx where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_sjzx">
+		update b_sjzx set tp=#{tp} where id=#{id}
+	</update>
+</mapper>

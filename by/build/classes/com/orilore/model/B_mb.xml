@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_mbMapper">
+	<resultMap type="B_mb" id="b_mbResultMap">
+		<id column="id" property="id"/>
+		<result column="mbmc" property="mbmc"/>
+		<result column="mbdz" property="mbdz"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_mb">
+		select * from b_mb where id=#{id}
+	</select>
+	<select id="select" resultMap="b_mbResultMap">
+		select * from b_mb
+	</select>
+	<insert id="insert" parameterType="B_mb">
+		insert into b_mb(mbmc,mbdz) values(#{mbmc},#{mbdz})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_mb where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_mb">
+		update b_mb set mbmc=#{mbmc},mbdz=#{mbdz} where id=#{id}
+	</update>
+</mapper>

@@ -1,0 +1,278 @@
+.cl:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.cl{
+	zoom:1;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.content{
+	background: #f9f9f9;
+}
+/*header{
+	width: 1200px;
+	margin: 0 auto;
+}*/
+.title{
+ background: #333;
+}
+.headOne{
+	width: 1200px;
+	margin: 0 auto;
+	/*background: #333;*/
+}
+.headOne ul{
+ float: left;
+}
+.headOne li{
+	float: left;
+	line-height: 30px;
+	color: #fff;
+}
+.headOne li a{
+	color: #fff;
+}
+.headOne ul:nth-of-type(2){
+	margin-left: 448px;
+}
+.headOne .headOl{
+	width: 1px;
+	height: 11px;
+	margin-left: 18px;
+	margin-right: 21px;
+	background: #cbcbcb;
+	margin-top: 11px;
+}
+.headOne .headTl{
+	width: 1px;
+	height: 11px;
+	background: #cbcbcb;
+	margin-left: 15px;
+	margin-right: 20px;
+	margin-top: 11px;
+
+}
+.headOne img{
+	margin-left: 9px;
+}
+.headOne .headOli{
+	width: 110px;
+	margin-left: 43px;
+	background-color: #513767;
+	background: url('../images/header_cart.jpg') no-repeat 15px 7px #513767;
+	/*padding-left: 10px;*/
+}
+.headOne .headOli a{
+	margin-left: 41px;
+}
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>headTwo*/
+.mune{
+	background: #fff;
+	box-shadow: 0px 0px 5px rgba(0,0,0,.6);
+}
+.head{
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 24px;
+	
+	position: relative;
+}
+.head .xlcd{
+	background: white;
+	position: absolute;
+	left: 408px;
+	top:98px;
+	width:120px;
+	border-radius:8px 8px;
+	font-size:16px;
+	font-family:"Î¢ÈíÑÅºÚ";
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	z-index: 999999999999;
+	display: none; 
+}
+.head .xlcd ul li{
+	font-size: 18px;
+	color:black;
+	display: block;
+	
+}
+.head>a:first-of-type,.head .bigbox{
+	float: left;
+}
+.head .bigbox{
+	width:730px;
+	height:54px;
+	overflow:hidden;
+	margin-left: 177px;
+	position: relative;
+}
+.head .bigbox ul{
+	position:absolute;
+	left:73px;
+	width:657px;
+	transition:top 1s;
+	
+}
+.head .gd{
+	display: none;
+}
+.head .bigbox ul li{
+	float: left;
+}
+.head .bigbox>a{
+	border-bottom:2px solid black;
+}
+.head .bigbox ul li a,.head .bigbox>a{
+	color:black;
+	font-size: 16px;
+}
+.head .bigbox ul li a{
+	margin-right: 41px;
+	padding-bottom:10px;
+}
+.head>a:nth-of-type(2){
+	float: right;
+	font-size: 16px;
+	color: black;
+	margin-top: 21px;
+	padding-right: 25px;
+	background: url(../images/home_headtriangle.png) no-repeat 40px 1px;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.update{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.update .tip{
+padding-top: 23px;
+padding-bottom: 8px;
+}
+.update .tip span{
+	color: #333333;
+}
+.update em{
+	color: #808080;
+}
+.update .tip em{
+	margin-left: 10px;
+}
+.update .newup{
+
+}
+.update p{
+	color: #333333;
+}
+.update .newup{
+	text-align: center;
+}
+.update .newup p:nth-of-type(1){
+	font-size: 30px;
+	line-height: 90px;
+	margin-bottom: 30px;
+}
+.update .newup p:nth-of-type(2){
+	padding-bottom:20px;
+}
+.update .newup p:nth-of-type(2) em{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.update ul{
+	margin-top: 
+}
+.update ul li{
+	background: #fff;
+	margin-bottom: 20px;
+}
+.update ul li div{
+	float: left;
+}
+.update ul li div:nth-of-type(1){
+	width: 260px;
+	margin-top:122px;
+	margin-left: 95px;
+	margin-right: 95px;
+	text-align:center;
+	background: #fff;
+}
+.update ul li div:nth-of-type(1) p{
+	line-height: 50px;	
+	font-size: 22px;
+}
+.update ul li div:nth-of-type(1) strong{
+	display: block;
+	line-height: 50px;
+	color: #ff3333;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 24px;
+}
+.update img{
+	width: 750px;
+	height: 385px;
+}
+
+
+
+
+
+
+
+.low{
+	width: 1200px;
+	margin: 0 auto;
+}
+.lowt{
+	width: 1064px;
+	margin: 0 auto;
+	background: #fff;
+	padding-top: 38px;
+	padding-left: 136px;
+	padding-bottom: 36px;
+
+}
+.low_l li{
+	float: left;
+	line-height: 20px;
+}
+
+.low_l li a{
+	color: #724a88;
+}
+.low_l .low_li{
+	width: 2px;
+	height: 20px;
+	margin-left: 15px;
+	margin-right: 19px;
+	background: #dddddd;
+}
+.low_l p{
+	line-height: 37px;
+}
+.low_l{
+	float: left;
+}
+.low_r{
+	float: left;
+	margin-left: 154px;
+	padding-top: 5px;
+}
+.low_r img{
+	float: left;
+}
+.low_r .lowimg{
+	margin-left: 44px;
+}
+.low_r li{
+	float: left;
+	margin-left: 23px;
+}
+.low_r .lowp{
+	padding-top: 18px;
+	padding-bottom: 16px;
+}

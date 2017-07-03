@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.AreasMapper">
+	<resultMap type="Areas" id="areasResultMap">
+		<id column="id" property="id"/>
+		<result column="areaid" property="areaid"/>
+		<result column="area" property="area"/>
+		<result column="cityid" property="cityid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="Areas">
+		select * from areas where id=#{id}
+	</select>
+	<select id="select" resultMap="areasResultMap">
+		select * from areas
+	</select>
+	<insert id="insert" parameterType="Areas">
+		insert into areas(areaid,area,cityid) values(#{areaid},#{area},#{cityid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from areas where id=#{id}
+	</delete>
+	<update id="update" parameterType="Areas">
+		update areas set areaid=#{areaid},area=#{area},cityid=#{cityid} where id=#{id}
+	</update>
+</mapper>

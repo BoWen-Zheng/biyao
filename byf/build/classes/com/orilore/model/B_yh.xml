@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_yhMapper">
+	<resultMap type="B_yh" id="b_yhResultMap">
+		<id column="id" property="id"/>
+		<result column="nc" property="nc"/>
+		<result column="xb" property="xb"/>
+		<result column="yhm" property="yhm"/>
+		<result column="yhmm" property="yhmm"/>
+		<result column="yhtx" property="yhtx"/>
+		<result column="zt" property="zt"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_yh">
+		select * from b_yh where id=#{id}
+	</select>
+	<select id="select" resultMap="b_yhResultMap">
+		select * from b_yh
+	</select>
+	<insert id="insert" parameterType="B_yh">
+		insert into b_yh(nc,xb,yhm,yhmm,yhtx,zt) values(#{nc},#{xb},#{yhm},#{yhmm},#{yhtx},#{zt})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_yh where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_yh">
+		update b_yh set nc=#{nc},xb=#{xb},yhm=#{yhm},yhmm=#{yhmm},yhtx=#{yhtx},zt=#{zt} where id=#{id}
+	</update>
+</mapper>

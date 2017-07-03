@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_cp_lxMapper">
+	<resultMap type="B_cp_lx" id="b_cp_lxResultMap">
+		<id column="id" property="id"/>
+		<result column="cpid" property="cpid"/>
+		<result column="lxid" property="lxid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_cp_lx">
+		select * from b_cp_lx where id=#{id}
+	</select>
+	<select id="select" resultMap="b_cp_lxResultMap">
+		select * from b_cp_lx
+	</select>
+	<insert id="insert" parameterType="B_cp_lx">
+		insert into b_cp_lx(cpid,lxid) values(#{cpid},#{lxid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_cp_lx where id=#{id}
+	</delete>
+	<delete id="deletebycpid" parameterType="int">
+		delete from b_cp_lx where cpid=#{cpid}
+	</delete>
+	<update id="update" parameterType="B_cp_lx">
+		update b_cp_lx set cpid=#{cpid},lxid=#{lxid} where id=#{id}
+	</update>
+</mapper>

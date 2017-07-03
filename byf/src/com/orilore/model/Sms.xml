@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.SmsMapper">
+	<resultMap type="Sms" id="smsResultMap">
+		<id column="id" property="id"/>
+		<result column="sjh" property="sjh"/>
+		<result column="yzm" property="yzm"/>
+		<result column="sj" property="sj"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="Sms">
+		select * from sms where id=#{id}
+	</select>
+	<select id="select" resultMap="smsResultMap">
+		select * from sms
+	</select>
+	<insert id="insert" parameterType="Sms">
+		insert into sms(sjh,yzm,sj) values(#{sjh},#{yzm},#{sj})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from sms where id=#{id}
+	</delete>
+	<update id="update" parameterType="Sms">
+		update sms set sjh=#{sjh},yzm=#{yzm},sj=#{sj} where id=#{id}
+	</update>
+</mapper>

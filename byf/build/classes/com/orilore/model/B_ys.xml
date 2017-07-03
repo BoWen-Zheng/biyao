@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_ysMapper">
+	<resultMap type="B_ys" id="b_ysResultMap">
+		<id column="id" property="id"/>
+		<result column="ystp" property="ystp"/>
+		<result column="cptp" property="cptp"/>
+		<result column="ysmc" property="ysmc"/>
+		<result column="cpid" property="cpid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_ys">
+		select * from b_ys where id=#{id}
+	</select>
+	<select id="select" resultMap="b_ysResultMap">
+		select * from b_ys
+	</select>
+	<select id="selectbycpid" parameterType="int" resultMap="b_ysResultMap">
+		select * from b_ys where cpid=#{cpid}
+	</select>
+	<insert id="insert" parameterType="B_ys">
+		insert into b_ys(ystp,cptp,ysmc,cpid) values(#{ystp},#{cptp},#{ysmc},#{cpid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_ys where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_ys">
+		update b_ys set ystp=#{ystp},cptp=#{cptp},ysmc=#{ysmc},cpid=#{cpid} where id=#{id}
+	</update>
+</mapper>

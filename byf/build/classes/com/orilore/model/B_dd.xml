@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_ddMapper">
+	<resultMap type="B_dd" id="b_ddResultMap">
+		<id column="id" property="id"/>
+		<result column="ddh" property="ddh"/>
+		<result column="dzid" property="dzid"/>
+		<result column="yhid" property="yhid"/>
+		<result column="fp" property="fp"/>
+		<result column="zj" property="zj"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_dd">
+		select * from b_dd where id=#{id}
+	</select>
+	<select id="select" resultMap="b_ddResultMap">
+		select * from b_dd
+	</select>
+	<insert id="insert" parameterType="B_dd">
+		insert into b_dd(ddh,dzid,yhid,fp,zj) values(#{ddh},#{dzid},#{yhid},#{fp},#{zj})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_dd where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_dd">
+		update b_dd set ddh=#{ddh},dzid=#{dzid},yhid=#{yhid},fp=#{fp},zj=#{zj} where id=#{id}
+	</update>
+</mapper>

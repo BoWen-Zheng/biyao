@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_cpMapper">
+	<resultMap type="B_cp" id="b_cpResultMap">
+		<id column="id" property="id"/>
+		<result column="cpmc" property="cpmc"/>
+		<result column="cpms" property="cpms"/>
+		<result column="sczq" property="sczq"/>
+		<result column="cpjg" property="cpjg"/>
+		<result column="cpxq" property="cpxq"/>
+		<result column="fbsj" property="fbsj"/>
+		<result column="zt" property="zt"/>
+		<result column="cptp" property="cptp"/>
+		<result column="sjid" property="sjid"/>
+		<result column="lbtp" property="lbtp"/>
+		<result column="xptp" property="xptp"/>
+		<result column="mid" property="mid"/>
+	</resultMap>
+	<resultMap type="B_cp" id="cpmap">
+		<id column="id" property="id"/>
+		<result column="cpmc" property="cpmc"/>
+		<result column="cpjg" property="cpjg"/>
+		<result column="fbsj" property="fbsj"/>
+		<result column="zt" property="zt"/>
+		<result column="cptp" property="cptp"/>
+		<association property="mb" javaType="com.orilore.model.B_mb">
+		<id column="mbid" property="id"/>
+		<result column="mbmc" property="mbmc"/>
+		</association>
+		<association property="sj" javaType="com.orilore.model.B_sj">
+		<id column="sjid" property="id"/>
+		<result column="sjmc" property="sjmc"/>
+		</association>
+		<collection property="lxs" ofType="com.orilore.model.B_lx">
+		<id column="lxid" property="id"/>
+		<result column="lxmc" property="mc"/>
+		</collection>
+		
+		
+	</resultMap>
+	<select id="selectcpbyid" parameterType="map" resultMap="cpmap">
+		select a.id,a.cpmc,a.fbsj,a.cpjg,a.cptp,c.id as lxid,c.mc as lxmc,d.id as mbid,d.mbmc,e.id as sjid,e.sjmc from
+		 b_cp a,b_cp_lx b,b_lx c,b_mb d,b_sj e
+		WHERE a.id=b.cpid and b.lxid=c.id and d.id=a.mid AND e.id=a.sjid
+		<if test="cpmc!=null and cpmc!=''">
+		 and a.cpmc like #{"%"+cpmc+"%"}
+		</if>
+		<if test="lxid!=0 and lxid!=null">
+		 and a.id=#{lxid}
+		</if>
+		<if test="mbid!=0 and mbid!=null">
+		 and d.id=#{mbid}
+		</if>
+		<if test="sjid!=0 and sjid!=null">
+		 and e.id=#{sjid}
+		</if>
+		<if test="zt!=0 and zt!=null">
+		 and a.zt=#{zt}
+		</if>
+		<if test="beginfbsj!=null and beginfbsj!=''">
+		 and a.fbsj&gt;=#{beginfbsj}
+		</if>
+		<if test="endfbsj!=null and endfbsj!=''">
+		 and a.fbsj&lt;=#{endfbsj}
+		</if>
+		<if test="beginjg!=null and beginjg!=''">
+		 and a.cpjg&gt;=#{beginjg}
+		</if>
+		<if test="endjg!=null and endjg!=''">
+		 and a.cpjg&lt;=#{endjg}
+		</if>
+	</select>
+	<select id="selectcount" parameterType="map" resultType="int">
+		select count(distinct a.id) from
+		 b_cp a,b_cp_lx b,b_lx c,b_mb d,b_sj e
+		WHERE a.id=b.cpid and b.lxid=c.id and d.id=a.mid AND e.id=a.sjid
+		<if test="cpmc!=null and cpmc!=''">
+		 and a.cpmc like #{"%"+cpmc+"%"}
+		</if>
+		<if test="lxid!=0 and lxid!=null">
+		 and a.id=#{lxid}
+		</if>
+		<if test="mbid!=0 and mbid!=null">
+		 and d.id=#{mbid}
+		</if>
+		<if test="sjid!=0 and sjid!=null">
+		 and e.id=#{sjid}
+		</if>
+		<if test="zt!=0 and zt!=null">
+		 and a.zt=#{zt}
+		</if>
+		<if test="beginfbsj!=null and beginfbsj!=''">
+		 and a.fbsj&gt;=#{beginfbsj}
+		</if>
+		<if test="endfbsj!=null and endfbsj!=''">
+		 and a.fbs&lt;=#{endfbsj}
+		</if>
+		<if test="beginjg!=null and beginjg!=''">
+		 and a.cpjg&gt;=#{beginjg}
+		</if>
+		<if test="endjg!=null and endjg!=''">
+		 and a.cpjg&lt;=#{endjg}
+		</if>
+	</select>
+	<select id="selectOne" parameterType="int" resultType="B_cp">
+		select * from b_cp where id=#{id}
+	</select>
+	<select id="select" resultMap="b_cpResultMap">
+		select * from b_cp
+	</select>
+	<insert id="insert" parameterType="B_cp" useGeneratedKeys="true" keyProperty="id">
+		insert into b_cp(cpmc,cpms,sczq,cpjg,cpxq,fbsj,zt,cptp,sjid,lbtp,xptp,mid) values(#{cpmc},#{cpms},#{sczq},#{cpjg},#{cpxq},#{fbsj},#{zt},#{cptp},#{sjid},#{lbtp},#{xptp},#{mid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_cp where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_cp">
+		update b_cp set cpmc=#{cpmc},cpms=#{cpms},sczq=#{sczq},cpjg=#{cpjg},cpxq=#{cpxq},fbsj=#{fbsj},zt=#{zt},cptp=#{cptp},sjid=#{sjid},lbtp=#{lbtp},xptp=#{xptp},mid=#{mid} where id=#{id}
+	</update>
+</mapper>

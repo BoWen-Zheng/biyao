@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_cpMapper">
+	<resultMap type="B_cp" id="b_cpResultMap">
+		<id column="id" property="id"/>
+		<result column="cpmc" property="cpmc"/>
+		<result column="cpms" property="cpms"/>
+		<result column="sczq" property="sczq"/>
+		<result column="cpjg" property="cpjg"/>
+		<result column="cpxq" property="cpxq"/>
+		<result column="fbsj" property="fbsj"/>
+		<result column="zt" property="zt"/>
+		<result column="cptp" property="cptp"/>
+		<result column="sjid" property="sjid"/>
+		<result column="lbtp" property="lbtp"/>
+		<result column="xptp" property="xptp"/>
+		<result column="mid" property="mid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_cp">
+		select * from b_cp where id=#{id}
+	</select>
+	<select id="selectbysjid" parameterType="int" resultType="B_cp">
+		select * from b_cp where sjid=#{sjid}
+	</select>
+	<select id="selectbyzt" parameterType="int" resultType="B_cp">
+		select * from b_cp where zt=#{zt} order by fbsj desc
+	</select>
+	<select id="select" resultMap="b_cpResultMap">
+		select * from b_cp
+	</select>
+	<insert id="insert" parameterType="B_cp">
+		insert into b_cp(cpmc,cpms,sczq,cpjg,cpxq,fbsj,zt,cptp,sjid,lbtp,xptp,mid) values(#{cpmc},#{cpms},#{sczq},#{cpjg},#{cpxq},#{fbsj},#{zt},#{cptp},#{sjid},#{lbtp},#{xptp},#{mid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_cp where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_cp">
+		update b_cp set cpmc=#{cpmc},cpms=#{cpms},sczq=#{sczq},cpjg=#{cpjg},cpxq=#{cpxq},fbsj=#{fbsj},zt=#{zt},cptp=#{cptp},sjid=#{sjid},lbtp=#{lbtp},xptp=#{xptp},mid=#{mid} where id=#{id}
+	</update>
+</mapper>

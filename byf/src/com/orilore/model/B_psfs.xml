@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_psfsMapper">
+	<resultMap type="B_psfs" id="b_psfsResultMap">
+		<id column="id" property="id"/>
+		<result column="psfs" property="psfs"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_psfs">
+		select * from b_psfs where id=#{id}
+	</select>
+	<select id="select" resultMap="b_psfsResultMap">
+		select * from b_psfs
+	</select>
+	<insert id="insert" parameterType="B_psfs">
+		insert into b_psfs(psfs) values(#{psfs})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_psfs where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_psfs">
+		update b_psfs set psfs=#{psfs} where id=#{id}
+	</update>
+</mapper>

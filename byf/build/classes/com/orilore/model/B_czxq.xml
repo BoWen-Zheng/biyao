@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_czxqMapper">
+	<resultMap type="B_czxq" id="b_czxqResultMap">
+		<id column="id" property="id"/>
+		<result column="cztp" property="cztp"/>
+		<result column="czmc" property="czmc"/>
+		<result column="czms" property="czms"/>
+		<result column="czlbid" property="czlbid"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_czxq">
+		select * from b_czxq where id=#{id}
+	</select>
+	<select id="select" resultMap="b_czxqResultMap">
+		select * from b_czxq
+	</select>
+	<select id="selectbyczlbid" parameterType="int" resultMap="b_czxqResultMap">
+		select * from b_czxq where czlbid=#{czlbid}
+	</select>
+	<insert id="insert" parameterType="B_czxq">
+		insert into b_czxq(cztp,czmc,czms,czlbid) values(#{cztp},#{czmc},#{czms},#{czlbid})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_czxq where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_czxq">
+		update b_czxq set cztp=#{cztp},czmc=#{czmc},czms=#{czms},czlbid=#{czlbid} where id=#{id}
+	</update>
+</mapper>

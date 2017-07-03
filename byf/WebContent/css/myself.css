@@ -1,0 +1,420 @@
+body{
+	font-family: '微软雅黑';
+}
+.cl:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.t1{
+	height: 30px;
+	background: #333333;
+}
+.top{
+	margin:0 auto;
+	width: 1200px;
+}
+.top a,.top{
+	color: white;
+}
+.top ul:nth-of-type(1){
+	float: left;
+}
+.top ul:nth-of-type(1) li{
+	line-height: 30px;
+	float: left;
+	font-size: 11px; 
+}
+.top ul:nth-of-type(1) li a{
+	margin-left: 22px;
+	margin-right: 18px;
+}
+.top ul:nth-of-type(1) li:first-of-type a{
+	margin-left: 0px;
+}
+.top ul:nth-of-type(2){
+	float: right;
+}
+.top ul:nth-of-type(2) li{
+	line-height: 30px;
+	float: right;
+	font-size: 11px;
+}
+.top ul:nth-of-type(2):last-child p,.top ul:nth-of-type(2):last-child a{
+	float: left;
+	line-height: 30px;
+}
+.top ul:nth-of-type(2) li:first-of-type a{
+	background: #513767 url(../images/home_topcart.png) 15px 7px no-repeat;
+	padding-left: 42px;
+	padding-right:21px; 
+}
+.top ul:nth-of-type(2) li:first-of-type{
+	margin-left: 7px;
+}
+.top ul:nth-of-type(2) li a{
+	margin-left: 16px;
+	margin-right: 20px;
+}
+.top ul:nth-of-type(2) li:first-child a{
+	margin-right:0px; 
+}
+.top ul:nth-of-type(2) li:nth-of-type(2) a{
+	padding-right: 18px;
+	margin-right: 2px;
+	background: url(../images/home_toptriangle.png) no-repeat 58px 15px;
+}
+
+.head{
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+.head a:first-of-type,.head ul{
+	float: left;
+}
+.head ul{
+	margin-left: 177px;
+}
+.head ul li{
+	float: left;
+}
+.head ul li a{
+	margin-top: 21px;
+	color:black;
+	font-size: 16px;
+}
+.head ul li a{
+	margin-right: 41px;
+}
+.head a:nth-of-type(2){
+	float: right;
+	font-size: 16px;
+	color: black;
+	margin-top: 21px;
+	padding-right: 25px;
+	background: url(../images/home_headtriangle.png) no-repeat 40px 1px;
+}
+.transition{
+	height: 8px;
+	background: linear-gradient(to bottom, #dedede, #f9f9f9);
+}
+.bottom{
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 38px;
+	padding-bottom: 34px; 
+	background: white;
+}
+.bottom div{
+	float: left;
+
+}
+.bottom .bottom1{
+	margin-right: 140px;
+	padding-left: 60px;
+}
+.bottom div:last-child{
+	width: 500px;
+}
+.bottom ul li{
+	float: left;
+
+}
+.bottom ul li a{
+	margin-left: 20px;
+	margin-right: 15px;
+}
+.bottom ul li:first-child a{
+	margin-left: 0px;
+}
+.bottom  p{
+	margin-top: 14px;
+}
+.bottom div:first-child p:last-child{
+	padding-left: 26px;
+	background: url(../images/bottom_log.png) no-repeat;
+}
+.bottom div:last-child img,.bottom div:last-child p,.bottom div:last-child a{
+	float: left;
+}
+.bottom div:last-child p,.bottom div:last-child a{
+	margin-left: 24px;
+	margin-top:16px;
+}
+.bottom div:last-child div{
+	width: 230px;
+}
+.background{
+	background: #f9f9f9;
+	padding-top: 12px;
+}
+.body{
+	width: 1200px;
+	margin: 0 auto;
+	background: #f9f9f9;
+}
+.body .left,.body .right1,.body .right2{
+	float: left;
+}
+/*------------------------------------------------------------------------*/
+.body .right2{
+	display: none;
+}
+.body .left{
+	width: 190px;
+	background: #f9f9f9;
+}
+.body .left div{
+	width: 188px;
+	height: 204px;
+	background: #724a88;
+	border:1px solid #eeeeee;
+	border-bottom: none;
+
+}
+.body .left div img{
+	margin-left: 19px;
+	margin-top: 14px;
+}
+.body .left div p{
+	text-align: center;
+	line-height: 40px;
+	color: white;
+}
+.body .left>p{
+	padding-left: 22px;
+	line-height: 43px;
+	border-left: 1px solid #eeeeee;
+	border-right: 1px solid #eeeeee;
+}
+.body .left>p:first-of-type{
+	border-top: 4px solid #d5cdda;
+	background: url(../images/myself_order.png) no-repeat 149px 11px white;
+
+}
+.body .left>p:nth-of-type(2){
+	background: #eeecef;
+}
+.body .right1,.body .right2{
+	width: 960px;
+	height: 763px;
+	margin-left: 25px;
+	background: #f9f9f9;
+}
+.body .right1 p,.body .right2 div:first-of-type h4{
+	line-height: 23px;
+	font-size: 15px;
+	font-family: "微软雅黑";
+	color: #523669;
+	padding-bottom: 9px;
+	border-bottom: 1px solid #cccccc;
+}
+.body .right1 div{
+	padding-top: 25px;
+
+}
+.body .right2 div:first-of-type{
+	position: relative;
+}
+.body .right2 div:first-of-type h3{
+	position: absolute;
+	right: 0px;
+	top:0px;
+}
+.body .right2 div:first-of-type h3 a{
+	margin-left: 11px;
+	margin-right: 11px;
+	color: #999999;
+	line-height: 30px;
+}
+/*-----------------------------------------------*/
+.body .right2 .order,.body .right2 .address{
+	display: none;
+}
+.body .right2 .order>p:first-of-type{
+	margin-top: 3px;
+	line-height: 76px;
+	padding-left: 10px;
+}
+.body .right2 .order>div:first-of-type table th{
+	width: 155px;
+	height: 30px;
+	text-align: right;
+}
+.body .right2 .order>div:first-of-type table td{
+	width: 214px;
+	height: 30px;
+	text-align: left;
+}
+.body .right2 .order>div:first-of-type table tr:nth-of-type(2) td input{
+	width: 208px;
+	height: 30px;
+}
+.body .right2 .order>div:first-of-type table tr:nth-of-type(3) td input{
+	display: none;
+}
+.body .right2 .order>div:first-of-type table tr:nth-of-type(3) td label{
+	padding-left: 25px;
+	padding-right: 10px;
+	background: url(../images/myself_radio.png) no-repeat;
+	padding-bottom: 5px;
+}
+.body .right2 .order p:nth-of-type(2){
+	padding-top: 3px;
+	line-height: 78px;
+	padding-left: 10px;
+	border-top: 1px solid #cccccc;
+	margin-top: 40px;
+}
+.body .right2 .order>div:nth-of-type(2)>div:first-of-type{
+	width: 302px;
+	height: 302px;
+	background: #cccccc;
+}
+
+.body .right2 .order>div:nth-of-type(2)>div:first-of-type ul li:first-of-type button{
+	width: 97px;
+	line-height: 30px;
+	text-align: center;
+	background: white;
+	margin-top: 122px;
+	margin-left: 102px;
+}
+.body .right2 .order>div:nth-of-type(2)>div:first-of-type ul li:nth-of-type(2){
+	margin-left: 42px;
+	margin-top: 21px;
+}
+.body .right2 .order>div:nth-of-type(2)>div:not(:last-child){
+	float: left;
+}
+.body .right2 .order>div:nth-of-type(2)>div:nth-of-type(2) div{
+	float: left;
+}
+.body .right2 .order>div:nth-of-type(2)>div:nth-of-type(2) p{
+	line-height: 18px;
+	margin-top: 5px;
+}
+.body .right2 .order>div:nth-of-type(2)>div:nth-of-type(2){
+	width: 320px;
+	margin-left: 50px;
+}
+.body .right2 .order>div:nth-of-type(2)>div:nth-of-type(2)>div:first-of-type{
+	width: 150px;
+	margin-top: 15px;
+}
+.body .right2 .order>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(2){
+	width: 60px;
+	margin-top: 15px;
+	margin-left: 85px;
+}
+.body .right2 .order>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(3){
+	width: 60px;
+	margin-top: 15px;
+	margin-left: 85px;
+}
+.body .right2 .order>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(1) img{
+	width: 150px;
+	height: 150px;
+}
+.body .right2 .order>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(2) img{
+	width: 60px;
+	height: 60px;
+}
+.body .right2 .order>div:nth-of-type(2)>div:nth-of-type(2)>div:nth-of-type(3) img{
+	width: 32px;
+	height: 32px;
+	margin-left: 14px;
+}
+.body .right2 .order>div:nth-of-type(2){
+	position: relative;
+}
+.body .right2 .order>div:nth-of-type(2)>button{
+	position: absolute;
+	top:327px;
+	left: 20px;
+	width: 80px;
+	line-height: 28px;
+	text-align: center;
+	background: #724a88;
+	color: white;
+	border-radius: 2px 2px;
+}
+.body .right2 .address>div>table{
+	margin-top: 30px;
+}
+.body .right2 .address div table:first-of-type tr th{
+	width: 115px;
+	height: 42px;
+	text-align: right;
+}
+.body .right2 .address div table:first-of-type tr td{
+	width: 400px;
+	height: 42px;
+}
+.body .right2 .address div table:first-of-type tr:first-of-type td input{
+	width: 200px;
+	height: 30px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+.body .right2 .address div table:first-of-type tr:nth-of-type(2) td select{
+	width: 120px;
+	height: 35px;
+	margin-right: 9px;
+}
+.body .right2 .address div table:first-of-type tr:nth-of-type(3) td input{
+	width: 380px;
+	height: 30px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+.body .right2 .address div table:first-of-type tr:nth-of-type(4) td input{
+	width: 200px;
+	height: 30px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+.body .right2 .address div table:first-of-type tr:nth-of-type(6) td button{
+	width: 80px;
+	line-height: 28px;
+	text-align: center;
+	background: #724a88;
+	color: white;
+	border-radius: 2px;
+}
+.body .right2 .address div p{
+	color:#724a88;
+	font-family: "微软雅黑"; 
+}
+.body .right2 .address div table:nth-of-type(2){
+	width: 985px;
+	height: 27px;
+	background: #eeeeee;
+}
+.body .right2 .password table{
+	margin-top: 30px;
+}
+.body .right2 .password table td{
+	width: 214px;
+	height: 42px;
+}
+.body .right2 .password table th{
+	width: 125px;
+	height: 30px;
+	text-align: right;
+}
+.body .right2 .password table td input{
+	width: 208px;
+	height: 30px;
+	padding-left: 4px;
+	padding-right: 4px;	
+}
+.body .right2 .password table td:last-of-type button{
+	width: 80px;
+	line-height: 28px;
+	border-radius: 2px;
+	background: #724a88;
+	color: white;
+}

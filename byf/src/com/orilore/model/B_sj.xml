@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_sjMapper">
+	<resultMap type="B_sj" id="b_sjResultMap">
+		<id column="id" property="id"/>
+		<result column="sjmc" property="sjmc"/>
+		<result column="sjtp" property="sjtp"/>
+		<result column="fwtd" property="fwtd"/>
+		<result column="spzl" property="spzl"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_sj">
+		select * from b_sj where id=#{id}
+	</select>
+	<select id="select" resultMap="b_sjResultMap">
+		select * from b_sj
+	</select>
+	<insert id="insert" parameterType="B_sj">
+		insert into b_sj(sjmc,sjtp,fwtd,spzl) values(#{sjmc},#{sjtp},#{fwtd},#{spzl})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_sj where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_sj">
+		update b_sj set sjmc=#{sjmc},sjtp=#{sjtp},fwtd=#{fwtd},spzl=#{spzl} where id=#{id}
+	</update>
+</mapper>

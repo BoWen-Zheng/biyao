@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.ProvincesMapper">
+	<resultMap type="Provinces" id="provincesResultMap">
+		<id column="id" property="id"/>
+		<result column="provinceid" property="provinceid"/>
+		<result column="province" property="province"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="Provinces">
+		select * from provinces where id=#{id}
+	</select>
+	<select id="select" resultMap="provincesResultMap">
+		select * from provinces
+	</select>
+	<insert id="insert" parameterType="Provinces">
+		insert into provinces(provinceid,province) values(#{provinceid},#{province})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from provinces where id=#{id}
+	</delete>
+	<update id="update" parameterType="Provinces">
+		update provinces set provinceid=#{provinceid},province=#{province} where id=#{id}
+	</update>
+</mapper>

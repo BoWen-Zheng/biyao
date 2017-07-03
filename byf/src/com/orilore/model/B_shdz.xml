@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_shdzMapper">
+	<resultMap type="B_shdz" id="b_shdzResultMap">
+		<id column="id" property="id"/>
+		<result column="lxr" property="lxr"/>
+		<result column="lxdh" property="lxdh"/>
+		<result column="sfid" property="sfid"/>
+		<result column="csid" property="csid"/>
+		<result column="qyid" property="qyid"/>
+		<result column="jd" property="jd"/>
+		<result column="yhid" property="yhid"/>
+		<result column="zt" property="zt"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_shdz">
+		select * from b_shdz where id=#{id}
+	</select>
+	<select id="select" resultMap="b_shdzResultMap">
+		select * from b_shdz
+	</select>
+	<insert id="insert" parameterType="B_shdz">
+		insert into b_shdz(lxr,lxdh,sfid,csid,qyid,jd,yhid,zt) values(#{lxr},#{lxdh},#{sfid},#{csid},#{qyid},#{jd},#{yhid},#{zt})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_shdz where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_shdz">
+		update b_shdz set lxr=#{lxr},lxdh=#{lxdh},sfid=#{sfid},csid=#{csid},qyid=#{qyid},jd=#{jd},yhid=#{yhid},zt=#{zt} where id=#{id}
+	</update>
+</mapper>

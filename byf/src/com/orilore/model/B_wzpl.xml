@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.B_wzplMapper">
+	<resultMap type="B_wzpl" id="b_wzplResultMap">
+		<id column="id" property="id"/>
+		<result column="wzid" property="wzid"/>
+		<result column="yhid" property="yhid"/>
+		<result column="content" property="content"/>
+		<result column="plrq" property="plrq"/>
+	</resultMap>
+	<select id="selectOne" parameterType="int" resultType="B_wzpl">
+		select * from b_wzpl where id=#{id}
+	</select>
+	<select id="select" resultMap="b_wzplResultMap">
+		select * from b_wzpl
+	</select>
+	<insert id="insert" parameterType="B_wzpl">
+		insert into b_wzpl(wzid,yhid,content,plrq) values(#{wzid},#{yhid},#{content},#{plrq})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from b_wzpl where id=#{id}
+	</delete>
+	<update id="update" parameterType="B_wzpl">
+		update b_wzpl set wzid=#{wzid},yhid=#{yhid},content=#{content},plrq=#{plrq} where id=#{id}
+	</update>
+</mapper>

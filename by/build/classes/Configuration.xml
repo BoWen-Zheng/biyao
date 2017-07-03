@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="Areas" type="com.orilore.model.Areas"/>
+		<typeAlias alias="B_cc" type="com.orilore.model.B_cc"/>
+		<typeAlias alias="B_cp" type="com.orilore.model.B_cp"/>
+		<typeAlias alias="B_cp_lx" type="com.orilore.model.B_cp_lx"/>
+		<typeAlias alias="B_cpqm" type="com.orilore.model.B_cpqm"/>
+		<typeAlias alias="B_cpxt" type="com.orilore.model.B_cpxt"/>
+		<typeAlias alias="B_cpzt" type="com.orilore.model.B_cpzt"/>
+		<typeAlias alias="B_czlb" type="com.orilore.model.B_czlb"/>
+		<typeAlias alias="B_czxq" type="com.orilore.model.B_czxq"/>
+		<typeAlias alias="B_dd" type="com.orilore.model.B_dd"/>
+		<typeAlias alias="B_ddmx" type="com.orilore.model.B_ddmx"/>
+		<typeAlias alias="B_ddsj" type="com.orilore.model.B_ddsj"/>
+		<typeAlias alias="B_lx" type="com.orilore.model.B_lx"/>
+		<typeAlias alias="B_psfs" type="com.orilore.model.B_psfs"/>
+		<typeAlias alias="B_ptzc" type="com.orilore.model.B_ptzc"/>
+		<typeAlias alias="B_shdz" type="com.orilore.model.B_shdz"/>
+		<typeAlias alias="B_sj" type="com.orilore.model.B_sj"/>
+		<typeAlias alias="B_sjzx" type="com.orilore.model.B_sjzx"/>
+		<typeAlias alias="B_wz" type="com.orilore.model.B_wz"/>
+		<typeAlias alias="B_wzpl" type="com.orilore.model.B_wzpl"/>
+		<typeAlias alias="B_yh" type="com.orilore.model.B_yh"/>
+		<typeAlias alias="B_ys" type="com.orilore.model.B_ys"/>
+		<typeAlias alias="Cities" type="com.orilore.model.Cities"/>
+		<typeAlias alias="Provinces" type="com.orilore.model.Provinces"/>
+		<typeAlias alias="B_mb" type="com.orilore.model.B_mb"/>
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+		<transactionManager type="JDBC"/>
+		<dataSource type="POOLED">
+			<property name="driver" value="com.mysql.jdbc.Driver"/>
+			<property name="url" value="jdbc:mysql://127.0.0.1:3306/by" />
+			<property name="username" value="root"/>
+			<property name="password" value="root"/>
+		</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/orilore/model/Areas.xml"/>
+		<mapper resource="com/orilore/model/B_cc.xml"/>
+		<mapper resource="com/orilore/model/B_cp.xml"/>
+		<mapper resource="com/orilore/model/B_cp_lx.xml"/>
+		<mapper resource="com/orilore/model/B_cpqm.xml"/>
+		<mapper resource="com/orilore/model/B_cpxt.xml"/>
+		<mapper resource="com/orilore/model/B_cpzt.xml"/>
+		<mapper resource="com/orilore/model/B_czlb.xml"/>
+		<mapper resource="com/orilore/model/B_czxq.xml"/>
+		<mapper resource="com/orilore/model/B_dd.xml"/>
+		<mapper resource="com/orilore/model/B_ddmx.xml"/>
+		<mapper resource="com/orilore/model/B_ddsj.xml"/>
+		<mapper resource="com/orilore/model/B_lx.xml"/>
+		<mapper resource="com/orilore/model/B_psfs.xml"/>
+		<mapper resource="com/orilore/model/B_ptzc.xml"/>
+		<mapper resource="com/orilore/model/B_shdz.xml"/>
+		<mapper resource="com/orilore/model/B_sj.xml"/>
+		<mapper resource="com/orilore/model/B_sjzx.xml"/>
+		<mapper resource="com/orilore/model/B_wz.xml"/>
+		<mapper resource="com/orilore/model/B_wzpl.xml"/>
+		<mapper resource="com/orilore/model/B_yh.xml"/>
+		<mapper resource="com/orilore/model/B_ys.xml"/>
+		<mapper resource="com/orilore/model/Cities.xml"/>
+		<mapper resource="com/orilore/model/Provinces.xml"/>
+		<mapper resource="com/orilore/model/B_mb.xml"/>
+	</mappers>
+</configuration>
